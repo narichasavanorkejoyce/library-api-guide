@@ -12,7 +12,7 @@ A simple API for books.
 1.  Add secrets to `config/secrets.yml`.
 1.  Create a database with `rake db:create`.
 1.  Create a database schema with `rake db:migrate`.
-1.  Add data to the database with `rake db:seed db:example`.
+1.  Add data to the database with `rake db:seed db:examples`.
 1.  Run the HTTP server with `rails server`.
 
 ## Structure
@@ -38,7 +38,7 @@ correspond to API actions.
 ### books
 
 | Verb   | URI Pattern  | Controller#Action |
-|--------|--------------|-------------------|
+|:-------|:-------------|:------------------|
 | GET    | `/books`     | `books#index`     |
 | GET    | `/books/:id` | `books#show`      |
 | POST   | `/books`     | `books#create`    |
@@ -58,7 +58,7 @@ correspond to API actions.
 ### Authentication
 
 | Verb   | URI Pattern            | Controller#Action |
-|--------|------------------------|-------------------|
+|:-------|:-----------------------|:------------------|
 | POST   | `/sign-up`             | `users#signup`    |
 | POST   | `/sign-in`             | `users#signin`    |
 | PATCH  | `/change-password/:id` | `users#changepw`  |
@@ -180,7 +180,7 @@ HTTP/1.1 204 No Content
 ### Users
 
 | Verb | URI Pattern | Controller#Action |
-|------|-------------|-------------------|
+|:-----|:------------|:------------------|
 | GET  | `/users`    | `users#index`     |
 | GET  | `/users/1`  | `users#show`      |
 
