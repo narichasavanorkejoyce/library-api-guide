@@ -10,10 +10,10 @@ A simple API for books.
 1.  Change into the new directory.
 1.  Install dependencies with `bundle install`.
 1.  Add secrets to `config/secrets.yml`.
-1.  Create a database with `rake db:create`.
-1.  Create a database schema with `rake db:migrate`.
-1.  Add data to the database with `rake db:seed db:examples`.
-1.  Run the HTTP server with `rails server`.
+1.  Create a database with `bundle exec rake db:create`.
+1.  Create a database schema with `bundle exec rake db:migrate`.
+1.  Add data to the database with `bundle exec rake db:seed db:examples`.
+1.  Run the HTTP server with `bundle exec rails server`.
 
 ## Structure
 
