@@ -9,11 +9,14 @@ A simple API for books.
 1.  Fork and clone this repository.
 1.  Change into the new directory.
 1.  Install dependencies with `bundle install`.
-1.  Add secrets to `config/secrets.yml`.
+1.  Create a `.env` for sensitive settings (`touch .env`).
+1.  Generate new `development` and `test` secrets (`bundle exec rake secret`).
+1.  Store them in `.env` with keys `SECRET_KEY_BASE_<DEVELOPMENT|TEST>`
+    respectively.
 1.  Create a database with `bundle exec rake db:create`.
 1.  Create a database schema with `bundle exec rake db:migrate`.
 1.  Add data to the database with `bundle exec rake db:seed db:examples`.
-1.  Run the HTTP server with `bundle exec rails server`.
+1.  Run the HTTP server with `bundle exec rails server` or  `bin/rails server`.
 
 ## Structure
 
@@ -246,5 +249,6 @@ Content-Type: application/json; charset=utf-8
 
 ## [License](LICENSE)
 
-Source code distributed under the MIT license. Text and other assets copyright
-General Assembly, Inc., all rights reserved.
+1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
+1.  All software code is licensed under GNU GPLv3. For commercial use or
+    alternative licensing, please contact legal@ga.co.
