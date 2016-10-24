@@ -72,6 +72,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    pg (0.18.4)
     pkg-config (1.1.7)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -165,6 +166,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.11)
   byebug (~> 8.2.2)
   dotenv-rails (~> 2.1, >= 2.1.1)
+  pg
   pry (~> 0.10.3)
   pry-byebug (~> 3.3.0)
   pry-rails (~> 0.3.4)
