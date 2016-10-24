@@ -39,13 +39,15 @@ module LibraryApiGuide
     config.active_record.raise_in_transactional_callbacks = true
 
     # Cross-Origin Resource Sharing
+    # development client port
+    cors_port = 'GA'.each_byte.reduce('') { |a, e| a + format('%d', e) }.to_i
     config.middleware.use Rack::Cors do
       allow do
-        origins '*'
+        origins ENV['CLIENT_ORIGIN'] || "http://localhost:#{cors_port}"
         resource '*',
                  headers: :any,
                  methods: [:options, :get,
-                           :post, :patch, :delete]
+                           :post, :patch, :put, :delete]
       end
     end
   end
