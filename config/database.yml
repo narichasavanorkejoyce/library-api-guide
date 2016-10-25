@@ -1,4 +1,4 @@
-<% project_name = 'library-api' %>
+<% project_name = 'library-api-guide' %>
 
 default: &default
   adapter: postgresql

@@ -15,7 +15,7 @@ require 'action_controller/railtie'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module RailsApiTemplate
+module LibraryApiGuide
   # :nodoc:
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified
@@ -39,13 +39,15 @@ module RailsApiTemplate
     config.active_record.raise_in_transactional_callbacks = true
 
     # Cross-Origin Resource Sharing
+    # development client port
+    cors_port = 'GA'.each_byte.reduce('') { |a, e| a + format('%d', e) }.to_i
     config.middleware.use Rack::Cors do
       allow do
-        origins '*'
+        origins ENV['CLIENT_ORIGIN'] || "http://localhost:#{cors_port}"
         resource '*',
                  headers: :any,
                  methods: [:options, :get,
-                           :post, :patch, :delete]
+                           :post, :patch, :put, :delete]
       end
     end
   end

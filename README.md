@@ -1,6 +1,6 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# library-api
+# library-api-guide
 
 A simple API for books.
 
@@ -20,7 +20,7 @@ A simple API for books.
 
 ## Structure
 
-`library-api` follows the standard project structure for Rails 4.
+`library-api-guide` follows the standard project structure for Rails 4.
 
 User authentication is built-in.
 
@@ -72,7 +72,7 @@ correspond to API actions.
 Request:
 
 ```sh
-curl --include --request POST http://localhost:3000/sign-up \
+curl --include --request POST http://localhost:4741/sign-up \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
@@ -106,7 +106,7 @@ Content-Type: application/json; charset=utf-8
 Request:
 
 ```sh
-curl --include --request POST http://localhost:3000/sign-in \
+curl --include --request POST http://localhost:4741/sign-in \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
@@ -140,7 +140,7 @@ Content-Type: application/json; charset=utf-8
 Request:
 
 ```sh
-curl --include --request PATCH http://localhost:3000/change-password/$ID \
+curl --include --request PATCH http://localhost:4741/change-password/$ID \
   --header "Authorization: Token token=$TOKEN" \
   --header "Content-Type: application/json" \
   --data '{
@@ -166,7 +166,7 @@ HTTP/1.1 204 No Content
 Request:
 
 ```sh
-curl --include --request DELETE http://localhost:3000/sign-out/$ID \
+curl --include --request DELETE http://localhost:4741/sign-out/$ID \
   --header "Authorization: Token token=$TOKEN"
 ```
 
@@ -192,7 +192,7 @@ HTTP/1.1 204 No Content
 Request:
 
 ```sh
-curl --include --request GET http://localhost:3000/users \
+curl --include --request GET http://localhost:4741/users \
   --header "Authorization: Token token=$TOKEN"
 ```
 
@@ -225,7 +225,7 @@ Content-Type: application/json; charset=utf-8
 Request:
 
 ```sh
-curl --include --request GET http://localhost:3000/users/$ID \
+curl --include --request GET http://localhost:4741/users/$ID \
   --header "Authorization: Token token=$TOKEN"
 ```
 
@@ -246,6 +246,27 @@ Content-Type: application/json; charset=utf-8
   }
 }
 ```
+
+### Reset Database without dropping
+
+- locally
+```sh
+bin/rake db:migrate VERSION=0
+bin/rake db:migrate db:seed db:examples```
+
+- heroku
+
+```sh
+heroku run rake db:migrate VERSION=0
+heroku run rake db:migrate db:seed db:examples```
+
+
+bin/rake db:migrate VERSION=0
+
+
+
+
+
 
 ## [License](LICENSE)
 
