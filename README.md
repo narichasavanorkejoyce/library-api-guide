@@ -250,18 +250,20 @@ Content-Type: application/json; charset=utf-8
 ### Reset Database without dropping
 
 - locally
+
 ```sh
 bin/rake db:migrate VERSION=0
-bin/rake db:migrate db:seed db:examples```
+bin/rake db:migrate db:seed db:examples
+```
 
 - heroku
 
 ```sh
 heroku run rake db:migrate VERSION=0
-heroku run rake db:migrate db:seed db:examples```
+heroku run rake db:migrate db:seed db:examples
+```
 
 
-bin/rake db:migrate VERSION=0
 
 
 
