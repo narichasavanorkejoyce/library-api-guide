@@ -5,7 +5,6 @@ gem 'rails', '~> 4.2.6'
 gem 'rails-api'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'rack-cors', require: 'rack/cors'
-gem 'rb-readline'
 gem 'pg'
 gem 'bcrypt', '~> 3.1.11'
 
