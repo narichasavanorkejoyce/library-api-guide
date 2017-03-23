@@ -1,4 +1,4 @@
-# An example for user of the template
+# frozen_string_literal: true
 class ExampleSerializer < ActiveModel::Serializer
   attributes :id, :text, :editable
 
