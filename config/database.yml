@@ -1,9 +1,9 @@
-<% project_name = 'library-api-guide' %>
+<% project_name = 'ibrary-api-guide' %>
 
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: 5
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
 
 development:
   <<: *default
