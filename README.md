@@ -10,9 +10,11 @@ A simple API for books.
 1.  Change into the new directory.
 1.  Install dependencies with `bundle install`.
 1.  Create a `.env` for sensitive settings (`touch .env`).
-1.  Generate new `development` and `test` secrets (`bundle exec rake secret`).
+1.  Generate new different secrets for both `development` and `test` environments (`bundle exec rake secret`).
 1.  Store them in `.env` with keys `SECRET_KEY_BASE_<DEVELOPMENT|TEST>`
     respectively.
+    ![example](http://i.imgur.com/ELJMdAt.png "Example secrets")
+
 1.  Create a database with `bundle exec rake db:create`.
 1.  Create a database schema with `bundle exec rake db:migrate`.
 1.  Add data to the database with `bundle exec rake db:seed db:examples`.
